@@ -51,7 +51,7 @@ async def search_all_platforms(request: Request):
 
     results = []
 
-    for platform, url in PLATFORM_ENDPOINTS.items():
+    for platform, url in {"instagram": PLATFORM_ENDPOINTS["instagram"]}.items():
         payload = create_payload(query)
         try:
             response = requests.post(url, headers=HEADERS, json=payload)
